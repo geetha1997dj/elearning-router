@@ -1,0 +1,27 @@
+
+  db:
+    host: 'localhost'
+    username: 'root'
+    password: 'root'
+    synchronize: false
+  jwt:
+    secret: 'topSecret51'
+
+  smtp:
+    host: 'smtp.gmail.com'
+    port: '587'
+    user: 'admin'
+    password: 'admin@123'
+    send: true
+    secure: false
+
+  fcm:
+    # key: 'AAAAqQOP1Bk:APA91bHSg5BnEISYeAjkd6fTetNDTqC3u0e9Y7VZMoFIl2yU1Wit2rHYSRHhgMeSV6-Gvpo9ySFBCqeG_fTuy3t8MD-WswPlAOLPkhi13ATm7b2IvDcp5NyiMNLR70xHKgefiAi95gUC'
+    # key: 'AAAATU33UkI:APA91bH53p3eNODLF2RnJ0RnJXy3F2ryRWM9dflGItD_UxC4un7D03dRHBuQNaoH7GiomaDN6WHipg52DgIXZwOztxqnA5PyVhxhYLZC-4Jg64MmIZgZ5pS8LPndFBCjakHx6Pu29QXt'
+    key: 'AAAA-TKj0t8:APA91bE2LvlWtoSVP9A7qHt-He_A0anZ8hfYa38a7OR0MA_R1eHDR-oWnlxh84ajYbWqv-5tfVSlYuSA7YnUbdlnw56mHyCIbKvCSpG67O43VX5xRHVAZVBTGR4O8xPCUU0kEFxzSti8'
+
+  twoFactor:
+    apiKey: '58766108-c112-11ea-9fa5-0200cd936042'
+
+  imageUrl:
+    url: 'http://b1df9883bc4e.ngrok.io/api'

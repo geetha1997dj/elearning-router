@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <style>
+  table, td, th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  }
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+
+  .fieldNames {
+      color: gray;
+      font-size: 12px;
+      padding: 2px;
+      padding-left: 0;
+      font-weight: 300;
+  }
+  .fieldValues{
+    font-size: 14px;
+    padding: 2px;
+    padding-left: 0;
+  }
+  body {
+  font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+
+  <div style="height:100%; width: 100%;">
+   <div style="display: -webkit-box; justify-content: center; -webkit-box-pack: center; margin: 40px;">
+        <div style="-webkit-box-flex: 9; -webkit-flex: 9; flex: 9;  font-size: 24px; font-weight: 500;">
+           <div>aulas GST Invoice</div> 
+           <div style="font-size: 11px; color: gray;">Email us for any queries relate your aulas bill or bill at support@aulas.in</div>
+        </div>
+        <div style="-webkit-box-flex: 1; -webkit-flex: 1; flex: 1;">
+            <img src="https://s3.ap-south-1.amazonaws.com/test.files.classroom.digital/aulaslogo.png" width="60px" alt="">
+        </div>
+   </div>
+   <div style="display: -webkit-box; justify-content: center; -webkit-box-pack: center; margin: 0 40px;">
+        <div style="-webkit-box-flex: 2; -webkit-flex: 2;flex: 2; ">
+            {{#if gstin}}
+            <div class="fieldNames">GST Number</div>
+            <div class="fieldValues">{{gstin}}</div>
+            {{/if}}
+            {{#if panNo}}
+            <div class="fieldNames">PAN Number</div>
+            <div class="fieldValues">{{panNo}}</div>
+            {{/if}}
+            <div class="fieldNames">Issued To</div>
+                <div style="font-size: 12px;">{{customerName}}, </div>
+                <div style="font-size: 12px;">{{addr1}}, </div>
+                <div style="font-size: 12px;">{{addr2}},</div>
+                <div style="font-size: 12px;">{{addr3}}</div>
+            <div class="fieldNames">Place Of Supply</div>
+            <div class="fieldValues">{{state}}</div>
+        </div>
+        <div style="-webkit-box-flex: 1; -webkit-flex: 1; flex: 2;">
+            <div style="font-size: 18px; border-bottom: 2px solid #c6c9cc; ">
+                GST Invoice Summary
+            </div>
+            <div style="display: flex; display: -webkit-box; justify-content: space-between; -webkit-box-pack: justify; font-size: 11px; padding: 5px">
+                <div>
+                    Invoice Number:
+                </div>
+                <div>
+                    {{invoiceNo}}
+                </div>
+            </div>
+            <div style="display: flex; display: -webkit-box; justify-content: space-between; -webkit-box-pack: justify; font-size: 11px; padding: 5px; border-bottom: 2px solid #c6c9cc;">
+                <div>
+                    Invoice Date:
+                </div>
+                <div>
+                    {{date}}
+                </div>
+            </div>
+            <div style="display: flex; display: -webkit-box; justify-content: space-between; -webkit-box-pack: justify; font-size: 11px; padding: 5px; border-bottom: 2px solid #c6c9cc;">
+                <div>
+                    TOTAL AMOUNT
+                </div>
+                <div>
+                    ₹ {{totalAmount}}
+                </div>
+            </div>
+            <div style="display: flex; display: -webkit-box; justify-content: space-between; -webkit-box-pack: justify; font-size: 11px; padding: 5px; border-bottom: 2px solid #c6c9cc;">
+                <div>
+                    TOTAL TAX
+                </div>
+                <div>
+                    ₹ {{totalTax}}
+                </div>
+            </div>
+        </div>
+   </div>
+   <div style="display: flex; display: -webkit-box;  justify-content: flex-start; -webkit-box-pack: flex-start; padding: 5px 0; margin: 0 40px; padding-top: 10px; font-size: 12px;">
+    <span style="font-weight: 600;">Institute ID:</span> {{orgId}}
+   </div>
+   <div style="display: flex; display: -webkit-box; justify-content: flex-end; -webkit-box-pack: end; padding: 5px 0; margin: 0 40px; padding-top: 0; font-size: 12px;">
+    Original For Recepient
+   </div>
+   <div style="display: flex; display: -webkit-box;  justify-content: flex-start; -webkit-box-pack: flex-start; padding: 5px 0; margin: 0 40px; padding-top: 0; font-size: 12px;">
+    This aulas Invoice is for the billing period {{billingPeriod}}
+   </div>
+   <div style="display: flex; display: -webkit-box;  justify-content: flex-start; -webkit-box-pack: flex-start; padding: 5px 0; margin: 0 40px; padding-top: 0; font-size: 12px; color: gray;">
+    Greetings from aulas, we’re writing to provide you with a GST Invoice for your 1 year subscription of aulas services. 
+   </div>
+   <div style="display: flex; display: -webkit-box;  justify-content: flex-start; -webkit-box-pack: flex-start; padding: 5px 0; margin: 0 40px; padding-top: 0; font-size: 12px;">
+    GST Invoice Summary
+   </div>
+   <div>
+    <div style=" justify-content: flex-start;  -webkit-box-pack: flex-start; padding: 5px 0; margin: 0 40px; padding-top: 0; font-size: 12px;">
+        <div style="display: flex; display: -webkit-box; -webkit-box-flex: 1; -webkit-flex: 1; flex:1; border: 1px solid #787b83; justify-content: space-between; -webkit-box-pack: justify; padding: 10px; background-color: #e7eaed; font-weight: 500;">
+            <div>aulas Service Charges</div>
+            <div>₹ {{totalAmount}}</div>
+        </div>
+        <div style="display: flex; display: -webkit-box; -webkit-box-flex: 1; -webkit-flex: 1; flex:1; border: 1px solid #787b83; justify-content: space-between; -webkit-box-pack: justify; padding: 10px; font-size: 10px; padding-left: 20px;">
+            <div>Charges (Excl. gst)</div>
+            <div>₹ {{chargeExGst}}</div>
+        </div>
+        <div style="display: flex; display: -webkit-box; -webkit-box-flex: 1; -webkit-flex: 1; flex:1; border: 1px solid #787b83; justify-content: space-between; -webkit-box-pack: justify; padding: 10px; font-size: 10px; padding-left: 20px;">
+            <div>Credits/Discounts</div>
+            <div>₹ {{discount}}</div>
+        </div>
+        <div style="display: flex; display: -webkit-box; -webkit-box-flex: 1; -webkit-flex: 1; flex:1; border: 1px solid #787b83; justify-content: space-between; -webkit-box-pack: justify; padding: 10px; font-size: 10px; padding-left: 20px; font-weight: 600;">
+            <div>Net Charges (After Credits/Discount, excl. GST)</div>
+            <div>₹ {{netCharge}}</div>
+        </div>
+        <div style="display: flex; display: -webkit-box; -webkit-box-flex: 1; -webkit-flex: 1; flex:1; border: 1px solid #787b83; justify-content: space-between; -webkit-box-pack: justify; padding: 10px; font-size: 10px; padding-left: 20px; font-weight: 600;">
+            <div>Total GST Amount (IGST 18%)</div>
+            <div>₹ {{totalGst}}</div>
+        </div>
+    </div>
+    <div style="display: flex; display: -webkit-box;  justify-content: flex-start; -webkit-box-pack: flex-start; padding: 5px; margin: 0 40px; padding-top: 0; font-size: 10px; color: gray; margin-top: 50px;">
+  *This is a computer generated invoice and requires no signature. 
+    </div>
+    <div style="display: flex; display: -webkit-box;  justify-content: center; -webkit-box-pack: center; padding: 5px; margin: 0 40px; padding-top: 0;  ">
+        <div style=" border-top: 1px solid black; width: 100%; text-align: center; font-size: 10px; color: #787b83 ;" >
+            <div>Vectors Education LLP</div>
+            <div>#67 B, F.C. Road, Latasil, Uzanbazar</div>
+            <div>Guwahati, Assam</div>
+            <div>Pin: 781011</div>
+            <div><b>GSTIN:</b>18AAPFV8358P1ZV</div>
+            <div><b>HSN:</b> 998319</div>
+            <div><b>PAN:</b> AAPFV8858P</div>
+        </div>
+
+    </div>
+
+   </div>
+    </div>
+
+</body>
+</html>

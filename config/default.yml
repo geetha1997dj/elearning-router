@@ -1,0 +1,76 @@
+frontendserver:
+  frontendBaseUrl: 'https://password.theclassroom.biz'
+  onboardingServerUrl: 'https://autodeployment.theclassroom.biz'
+
+server:
+  baseUrl:  http://localhost:8000/api
+  # jenkinsUrl: https://triggerjenkins.aulas.in/addorganisation
+  jenkinsUrl: http://localhost:5000/addorganisation
+
+  port: 8000
+  #emailUrl: 'http://localhost:8055/api/invoice'
+  #emailService: 'https://locaalhost:8055'
+  # emailUrl: 'http://1locaalhost:8056/api/invoice'
+  # emailService: 'http://1locaalhost:8056'
+db:
+  type: 'mongodb'
+  port: 27017
+  database: 'brigosha'
+
+api:
+  version: 1
+
+jwt:
+  # expiresIn: 3600
+
+fcm:
+  url: 'https://fcm.googleapis.com/fcm/send'
+
+
+monitoring:
+  logger: 1
+
+twoFactor:
+  apiKey: '58766108-c112-11ea-9fa5-0200cd936042'
+
+aws:
+  accessKey: 'AKIA2LSXK66PTFLOT3223'
+  secretKey: 'xqABobNcPIvCeHfc4eX37atw9n+xb4/944eqqw2w'
+  region: 'ap-south-1'
+  bucketName: 'test.files.classroom.digital'
+  dlBucketName: 'test-digital-library'
+  s3Url: 'https://test.files.classroom.digital.s3.ap-south-1.amazonaws.com/'
+  dlS3Url: 'https://test-digital-library.s3.ap-south-1.amazonaws.com/'
+
+appVersion:
+  hybrid: 1
+  ios: 1
+  android: 1
+  web: 1
+
+env:
+  mode: 'local'
+
+
+local:
+  s3: 'https://s3.ap-south-1.amazonaws.com/test.files.classroom.digital/'
+  feelb: '0.0.0.0'
+  carelb: '0.0.0.0'
+  schedulelb: '0.0.0.0'
+  OTPLIMIT: 999
+  ROUTER_API: 'http://localhost:8000/api'
+  USER_API: 'http://localhost:8001/api/usernew'
+  emailUrl: 'http://127.0.0.1:8030/api/invoice'
+  emailService: 'http://127.0.0.1:8030'
+  feeCollectionMaster:
+    name: 'feeCollectionMaster'
+    type: 'mysql'
+    host: 'localhost'
+    port: 3306
+    username: 'admin'
+    password: 'adminadmin'
+    database: 'fee_collection_master'
+    entities: ['dist/src/shared/fee-collection-entity/*.entity.js']
+    synchronize: false
+    logging: ['query', 'error']
+    logger: 'file'
